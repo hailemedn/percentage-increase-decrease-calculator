@@ -1,3 +1,4 @@
+// calulates the percentage increase of decrease
 const piPdCalculator = (newValue, oldValue) => {
     const percentage =  ((newValue - oldValue) /oldValue) * 100
     const roundedPercentage = percentage.toFixed(2);
