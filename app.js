@@ -11,12 +11,27 @@ const piPdCalculator = (newValue, oldValue) => {
     }
 }
 
+const clearResults = () => {
+    document.querySelector('#last-day').textContent = '';
+    document.querySelector('#last-week').textContent = ''; 
+}
+
 const handleSubmit = (e) => {
     e.preventDefault();
+    clearResults();
     const newValue = Number(document.querySelector('.new-value').value);
-    const oldValue = Number(document.querySelector('.old-value').value);
+    const lastDayValue = Number(document.querySelector('.last-day-value').value);
+    const lastWeekValue = Number(document.querySelector('.last-week-value').value);
 
-    document.querySelector('#result').textContent = piPdCalculator(newValue, oldValue);
+    if(lastDayValue) {
+        document.querySelector('#last-day').textContent = `From last day, ${piPdCalculator(newValue, lastDayValue)}`
+    };
+
+    if(lastWeekValue) {
+        document.querySelector('#last-week').textContent = `From last week ${piPdCalculator(newValue, lastWeekValue)}`
+    };
+
+    
 }
 
 document.querySelector('#pipd-form').addEventListener('submit', handleSubmit);
