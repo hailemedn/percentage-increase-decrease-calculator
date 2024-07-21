@@ -28,7 +28,7 @@ const handleSubmit = (e) => {
     };
 
     if(lastWeekValue) {
-        document.querySelector('#last-week').textContent = `From last week ${piPdCalculator(newValue, lastWeekValue)}`
+        document.querySelector('#last-week').textContent = `From last week, ${piPdCalculator(newValue, lastWeekValue)}`
     };
 
     
